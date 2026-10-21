@@ -37,13 +37,15 @@ struct SettingsView: View {
                     .pickerStyle(.menu)
                 }
 
-                Section(language.text("rov.settings_title")) {
+                Section {
                     Toggle(isOn: $showROVDeviceCard) {
                         Label(language.text("rov.show_device_card"), systemImage: "iphone.gen3")
                     }
                     Toggle(isOn: $showROVCompatibility) {
                         Label(language.text("rov.show_compatibility"), systemImage: "checkmark.shield")
                     }
+                } header: {
+                    Text(language.text("rov.settings_title"))
                 } footer: {
                     Text(language.text("rov.settings_footer"))
                 }
